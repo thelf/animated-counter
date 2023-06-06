@@ -1,0 +1,18 @@
+.counter-container {
+    display: flex;
+    width: 100%;
+    border: 1px solid #000;
+    justify-content: space-around;
+}
+
+.output {
+    background-color: orange;
+    color: white;
+    text-align: center;
+
+    font-size: 3rem;
+}
+
+.output p {
+    font-size: 2rem;
+}
