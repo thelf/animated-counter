@@ -1,8 +1,5 @@
 <?php
-
-function e($html) {
-    return htmlspecialchars($html, ENT_QUOTES, 'UTF-8', true);
-}
+require_once __DIR__ . '/inc/all.php';
 
 $data = [
     'Besucher' => 21035,
