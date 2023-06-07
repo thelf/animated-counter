@@ -9,3 +9,8 @@ catch(PDOException $e) {
     echo 'Probleme mit der Datenbankverbindung...';
     die();
 }
+
+$stmt = $pdo->prepare('SELECT * FROM `data`');
+$stmt->execute();
+
+$results = $stmt->fetchAll(PDO::FETCH_ASSOC);

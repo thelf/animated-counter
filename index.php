@@ -1,12 +1,6 @@
 <?php
 require_once __DIR__ . '/inc/all.php';
 
-$data = [
-    'Besucher' => 21035,
-    'Tage' => 8025,
-    'Anmeldungen' => 300
-];
-
 $index = 0;
 ?>
 <!doctype html>
@@ -26,8 +20,8 @@ $index = 0;
 </header>
 
 <main class="counter-container">
-    <?php if (!empty($data)): ?>
-        <?php foreach ($data as $text => $number): ?>
+    <?php if (!empty($results)): ?>
+        <?php foreach ($results as $result): ?>
             <?php $index++ ?>
             <div class="counter-<?php echo $index ?>">
                 <h3>Paar</h3>
@@ -42,8 +36,8 @@ $index = 0;
                 </div>
                 <button type="submit">Absenden</button>
                 <div class="output">
-                    <p><?php echo e($text) ?></p>
-                    <h3 class="counter" data-count="<?php echo $number ?>">0</h3>
+                    <p><?php echo e($result['text']) ?></p>
+                    <h3 class="counter" data-count="<?php echo $result['number'] ?>">0</h3>
                 </div>
             </div>
         <?php endforeach; ?>
