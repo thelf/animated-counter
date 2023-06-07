@@ -1,5 +1,9 @@
 <?php
 
+function e($html) {
+    return htmlspecialchars($html, ENT_QUOTES, 'UTF-8', true);
+}
+
 $data = [
     'Besucher' => 21035,
     'Tage' => 8025,
@@ -32,16 +36,16 @@ $index = 0;
                 <h3>Paar</h3>
                 <h4>Zahl und Text eingeben</h4>
                 <div class="input col-1">
-                    Zahl
+                    Text
                     <input type="text">
                 </div>
                 <div class="input col-2">
-                    Text
+                    Zahl
                     <input type="number">
                 </div>
                 <button type="submit">Absenden</button>
                 <div class="output">
-                    <p><?php echo $text ?></p>
+                    <p><?php echo e($text) ?></p>
                     <h3 class="counter" data-count="<?php echo $number ?>">0</h3>
                 </div>
             </div>
