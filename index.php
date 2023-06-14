@@ -1,7 +1,6 @@
 <?php
 require_once __DIR__ . '/inc/all.php';
 
-$index = 0;
 ?>
 <!doctype html>
 <html lang="en">
@@ -19,26 +18,30 @@ $index = 0;
     <h2>Statistik</h2>
 </header>
 
+<div>
+    <h3>Text und Zahl eingeben</h3>
+
+    <form method="POST" action="submit.php">
+        <label for="text">Text:</label>
+        <input type="text" id="text" name="text">
+
+        <label for="number">Zahl:</label>
+        <input type="number" id="number" name="number">
+
+        <input type="submit" value="Absenden">
+    </form>
+
+    <?php if (!empty($results)): ?>
+    <p>Die Anzahl der Einträge in der Datenbank beträgt <?php echo count($results)?>. </p>
+    <?php endif;?>
+</div>
+
 <main class="counter-container">
     <?php if (!empty($results)): ?>
         <?php foreach ($results as $result): ?>
-            <?php $index++ ?>
-            <div class="counter-<?php echo $index ?>">
-                <h3>Paar</h3>
-                <h4>Zahl und Text eingeben</h4>
-                <div class="input col-1">
-                    Text
-                    <input type="text">
-                </div>
-                <div class="input col-2">
-                    Zahl
-                    <input type="number">
-                </div>
-                <button type="submit">Absenden</button>
-                <div class="output">
-                    <p><?php echo e($result['text']) ?></p>
-                    <h3 class="counter" data-count="<?php echo $result['number'] ?>">0</h3>
-                </div>
+            <div class="output">
+                <p><?php echo e($result['text']) ?></p>
+                <h3 class="counter" data-count="<?php echo $result['number'] ?>">0</h3>
             </div>
         <?php endforeach; ?>
     <?php else: ?>
