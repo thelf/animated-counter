@@ -18,8 +18,11 @@ require_once __DIR__ . '/inc/all.php';
     <h2>Statistik</h2>
 </header>
 
-<div>
+<div class="input-section">
     <h3>Text und Zahl eingeben</h3>
+    <?php if (!empty($_GET['success'])):?>
+    <h2 class="success-message">Ihre Eingaben wurden empfangen.</h2>
+    <?php endif;?>
 
     <form method="POST" action="submit.php">
         <label for="text">Text:</label>

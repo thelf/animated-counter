@@ -26,7 +26,7 @@ if (!empty($_POST)) {
         $stmt->bindValue('text', $text);
         $stmt->execute();
 
-        echo '<p>Vielen Dank für Ihre Eingabe!</p><p><a href="index.php">Zurück zum Eingabe Formular</a></p>';
+        header('Location: index.php?success=1');
         die();
     }
 }
