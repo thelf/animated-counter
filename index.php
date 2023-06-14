@@ -23,10 +23,10 @@ require_once __DIR__ . '/inc/all.php';
 
     <form method="POST" action="submit.php">
         <label for="text">Text:</label>
-        <input type="text" id="text" name="text">
+        <input type="text" id="text" name="text" required="required">
 
         <label for="number">Zahl:</label>
-        <input type="number" id="number" name="number">
+        <input type="number" id="number" name="number" required="required">
 
         <input type="submit" value="Absenden">
     </form>
